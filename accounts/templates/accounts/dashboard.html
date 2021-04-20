@@ -14,13 +14,13 @@
 			<a class="btn btn-primary  btn-sm btn-block" href="">Create Customer</a>
 			<table class="table table-sm">
 				<tr>
-					<th>Customer</th>
-					<th>Orders</th>
+                    <th>Customer</th>
+					<th>Phone</th>
 				</tr>
 
                 {% for customer in customers %}
                     <tr>
-                        <td>{{ customer.name }}</td>
+                        <td><a href="{% url 'customer' customer.id %}">{{ customer.name }}</td>
                         <td>{{ customer.phone }}</td>
                     </tr>
                 {% endfor %}
@@ -48,8 +48,8 @@
                         <td>{{ order.product }}</td>
                         <td>{{ order.created }}</td>
                         <td>{{ order.status }}</td>
-                        <td><a href="">Update</a></td>
-                        <td><a href="">Delete</a></td>
+                        <td><a class="btn btn-sm btn-info" href="">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="">Delete</a></td>
                     </tr>
                 {% endfor %}
 
